@@ -17,9 +17,17 @@ class Game {
     // startGame() {
 
     // }
-    // getRandomPhrase() {
-
-    // }
+        /**
+         * Selects random phrase from phrases property
+         * @returns {Object} Phrase object (string - ?) chosen to be used
+         */
+        getRandomPhrase( ) {
+            const randomIndex = Math.floor(Math.random() * 5); // creates random numbers from 0 to 5
+            //console.log(randomIndex);
+            return this.phrases[randomIndex]; // chooses random phrase from this.phrases array;
+            //console.log(typeof randomPhrase);
+            ;
+         }
     // handleInteraction() {
 
     // }

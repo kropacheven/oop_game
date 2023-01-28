@@ -9,11 +9,18 @@
 const phrase = new Phrase('Life is like a box of chocolates');
 //console.log(phrase.phrase);
 
+
 // 2. 
 const game = new Game();
 //game.phrases.forEach( (phrase, index) => {
 //    console.log(`Phrase ${index} - ${phrase}`);
 //} );
+
+// 3. Picking up random phrase as a new Phrase class parameter (then put in phrase const variable):
+phrase.phrase = game.getRandomPhrase();
+console.log( phrase.phrase );
+console.log( phrase);
+
 
 
 
