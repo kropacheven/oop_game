@@ -3,28 +3,34 @@
  * Game.js */
 
 class Game {
-    constructor(missed, phrases, activePhrase) {
-        this.missed = missed;
-        this.phrases = phrases;
-        this.activePhrase = activePhrase;
+    constructor() {
+        this.missed = 0;
+        this.phrases = [
+        'gold fields',
+        'blue sky',
+        'green grass',
+        'colorful flowers',
+        'red sunset'
+        ];           // an array of Phrase objects to use with the Game - empty for now
+        this.activePhrase = 'null'; //this is the Phrase object that's currently in play
     }
-    startGame() {
+    // startGame() {
 
-    }
-    getRandomPhrase() {
+    // }
+    // getRandomPhrase() {
 
-    }
-    handleInteraction() {
+    // }
+    // handleInteraction() {
 
-    }
-    removeLofe() {
+    // }
+    // removeLofe() {
 
-    }
-    checkForWin() {
+    // }
+    // checkForWin() {
 
-    }
-    gameOver() {
+    // }
+    // gameOver() {
 
         
-    }
+    // }
 }

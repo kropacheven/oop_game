@@ -4,15 +4,15 @@
 
 class Phrase {
     constructor (phrase) {
-        this.phrase = phrase;
+        this.phrase = phrase.toLowerCase();
     }
-    addPhraseToDisplay() {
+    // addPhraseToDisplay() {
 
-    }
-    checkLetter() {
+    // }
+    // checkLetter() {
 
-    }
-    showMatchedLetter() {
+    // }
+    // showMatchedLetter() {
         
-    }
+    // }
 }
