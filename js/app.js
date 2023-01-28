@@ -18,10 +18,13 @@ const game = new Game();
 phrase.phrase = game.getRandomPhrase();
 //console.log( phrase.phrase );
 
-// 4. Start a game:
-game.startGame();
-//console.log(game.activePhrase);
+// 4. Start a game: start button click activates startGame method inside Game class:
 
+const startBtn = document.getElementById('btn__reset');
+
+startBtn.addEventListener('click', () => {
+    game.startGame();
+});
 
 
 // 1. Event listener for "Start Game" button:
