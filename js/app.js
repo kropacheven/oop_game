@@ -16,8 +16,8 @@ const game = new Game();
 
 // 3. Picking up random phrase as a new Phrase class parameter (then put in phrase const variable):
 phrase.phrase = game.getRandomPhrase();
-console.log( phrase.phrase );
-console.log( phrase);
+//console.log( phrase.phrase );
+
 
 
 
