@@ -31,7 +31,7 @@ class Game {
     // handleInteraction() {
 
     // }
-    // removeLofe() {
+    // removeLife() {
 
     // }
     // checkForWin() {

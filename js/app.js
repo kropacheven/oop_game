@@ -3,14 +3,12 @@
  * app.js */
 
 
-// Adding instances to classes:
-
-// 1. 
+// 1. Creating Phrase object instanse: 
 const phrase = new Phrase('Life is like a box of chocolates');
 //console.log(phrase.phrase);
 
 
-// 2. 
+// 2. Creating Class object instanse: 
 const game = new Game();
 //game.phrases.forEach( (phrase, index) => {
 //    console.log(`Phrase ${index} - ${phrase}`);
