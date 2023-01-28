@@ -18,7 +18,9 @@ const game = new Game();
 phrase.phrase = game.getRandomPhrase();
 //console.log( phrase.phrase );
 
-
+// 4. Start a game:
+game.startGame();
+//console.log(game.activePhrase);
 
 
 
