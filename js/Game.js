@@ -46,10 +46,12 @@ class Game {
     * Checks if player has remaining lives and ends game if player is out
     */
     removeLife() {
-        if (phrase.checkLetter() === true) {
+        let hearts = document.querySelectorAll('.tries');
+        if (phrase.checkLetter() === false) {
             this.missed++;
             console.log(this.missed);
         } 
+    
     }
     /**
     * 5. Checks for winning move

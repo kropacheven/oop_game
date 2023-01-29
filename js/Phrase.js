@@ -33,10 +33,10 @@ class Phrase {
         for (let i = 0; i < letters.length; i++) {
             if ( letter === letters[i] ) {
                 console.log(true);
-                //return true;
+                return true;
             } else {
                 console.log(false);
-                //return false;
+                return false;
             }
         }
     }
