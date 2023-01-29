@@ -6,6 +6,9 @@ class Phrase {
     constructor (phrase) {
         this.phrase = phrase.toLowerCase();
     }
+    /**
+    * 1. Display phrase on game board
+    */
      addPhraseToDisplay() {
         const letters = this.phrase.split('');
         //console.log(letters);
@@ -22,7 +25,7 @@ class Phrase {
         document.querySelector('#letters').innerHTML = html;
      }
     /**
-    * Checks if passed letter is in phrase
+    * 2. Checks if passed letter is in phrase
     * @param (string) letter - Letter to check
     */
     checkLetter(letter) {
@@ -38,7 +41,7 @@ class Phrase {
         }
     }
     /**
-    * Displays passed letter on screen after a match is found
+    * 3. Displays passed letter on screen after a match is found
     * @param (string) letter - Letter to display
     */
     showMatchedLetter(letter) {
