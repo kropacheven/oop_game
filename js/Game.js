@@ -15,7 +15,7 @@ class Game {
         this.activePhrase = 'null'; //this is the Phrase object that's currently in play
     }
     /**
-    * Begins game by selecting a random phrase and displaying it to user
+    * 1. Begins game by selecting a random phrase and displaying it to user
     */
      startGame() {
         const overlay = document.getElementById('overlay');
@@ -26,7 +26,7 @@ class Game {
         phrase.addPhraseToDisplay(); // ?????
      }
     /**
-     * Selects random phrase from phrases property
+     * 2. Selects random phrase from phrases property
      * @returns {Object} Phrase object (string - ?) chosen to be used
      */
     getRandomPhrase( ) {
@@ -36,15 +36,26 @@ class Game {
         //console.log(typeof randomPhrase);
         ;
         }
-    // handleInteraction() {
+    // 3. handleInteraction() {
 
     // }
-    // removeLife() {
 
-    // }
-    // checkForWin() {
+    /**
+    * 4. Increases the value of the missed property
+    * Removes a life from the scoreboard
+    * Checks if player has remaining lives and ends game if player is out
+    */
+    removeLife() {
 
-    // }
+    }
+    /**
+    * 5. Checks for winning move
+    * @return {boolean} True if game has been won, false if game wasn't
+    won
+    */
+    //  checkForWin() {
+
+    //  }
     // gameOver() {
 
         
