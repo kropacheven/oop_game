@@ -41,7 +41,7 @@ class Phrase {
         }
     }
     /**
-    * 3. Displays passed letter on screen after a match is found
+    * 3.Displays passed letter on screen after a match is found
     * @param (string) letter - Letter to display
     */
     showMatchedLetter(letter) {
