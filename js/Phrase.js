@@ -21,10 +21,35 @@ class Phrase {
         console.log(html);
         document.querySelector('#letters').innerHTML = html;
      }
-    // checkLetter() {
-
-    // }
-    // showMatchedLetter() {
-        
-    // }
+    /**
+    * Checks if passed letter is in phrase
+    * @param (string) letter - Letter to check
+    */
+    checkLetter(letter) {
+        const letters = this.phrase.split('');
+        for (let i = 0; i < letters.length; i++) {
+            if ( letter === letters[i] ) {
+                console.log(true);
+                //return true;
+            } else {
+                console.log(false);
+                //return false;
+            }
+        }
+    }
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter) {
+        const lettersDisplayed = document.getElementsByClassName('letter');
+        //console.log(lettersDisplayed);
+        for (let i = 0; i < lettersDisplayed.length; i++) {
+            if ( letter === lettersDisplayed[i].textContent ) {
+                lettersDisplayed[i].classList.remove('hide');
+                lettersDisplayed[i].classList.add('show');
+            } 
+            
+        }
+    }
 }
