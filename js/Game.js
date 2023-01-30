@@ -51,6 +51,8 @@ class Game {
             this.missed++;
             console.log(this.missed);
         } 
+
+        hearts[this.missed - 1].firstChild.src = "images/lostHeart.png";
     
     }
     /**
