@@ -58,9 +58,16 @@ class Game {
     * @return {boolean} True if game has been won, false if game wasn't
     won
     */
-    //  checkForWin() {
-
-    //  }
+      checkForWin() {
+        const letter = document.getElementsByClassName('letter');
+        const show = document.getElementsByClassName('show');
+        if (letter.length === show.length) {
+            return true;
+            console.log('The game is won!!!');
+        } else {
+            return false;
+        }
+      }
     // gameOver() {
 
         
