@@ -53,6 +53,9 @@ class Game {
         } 
 
         hearts[this.missed - 1].firstChild.src = "images/lostHeart.png";
+        if (this.missed === 5) {
+            console.log('Game over');
+         }
     
     }
     /**
