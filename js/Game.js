@@ -84,7 +84,14 @@ class Game {
     * @param {boolean} gameWon - Whether or not the user won the game
     */
     gameOver() {
-
+        const overlay = document.getElementById('overlay');
+        const overlayMessage = document.getElementById('game-over-message');
+        if (this.checkForWin() === true ) {
+            overlay.style.display = 'block';
+            overlay.removeAttribute('class');
+            overlay.className = 'win';
+            overlayMessage.textContent = 'Great job!';
+        }
         
     }
 }
