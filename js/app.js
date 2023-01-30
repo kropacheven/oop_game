@@ -19,9 +19,14 @@ phrase.phrase = game.getRandomPhrase();
 //console.log( phrase.phrase );
 
 // 4. Start a game: start button click activates startGame method inside Game class:
-
 const startBtn = document.getElementById('btn__reset');
 
+// 5. Capture keyboard as a whole element:
+const keyBoard = document.getElementById('qwerty');
+
+
+
+// a. Event listener for "Start Game" button:
 startBtn.addEventListener('click', () => {
     game.startGame();
     game.missed = 0; // for resetting a game - when start button is clicked(win or lose)
@@ -32,11 +37,13 @@ startBtn.addEventListener('click', () => {
 });
 
 
-// 1. Event listener for "Start Game" button:
+// b. Event listener for keyboard buttons:
 
-// 2. Event listener for keyboard buttons:
-
-
+keyBoard.addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        console.log(event.target);
+    }
+});
 
 
 
