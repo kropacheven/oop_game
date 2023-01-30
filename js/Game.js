@@ -46,6 +46,8 @@ class Game {
     * Checks if player has remaining lives and ends game if player is out
     */
     removeLife() {
+        const overlay = document.getElementById('overlay');
+        const overlayMessage = document.getElementById('game-over-message');
         let hearts = document.querySelectorAll('.tries');
         if (phrase.checkLetter() === false) {
             this.missed++;
@@ -55,6 +57,10 @@ class Game {
         hearts[this.missed - 1].firstChild.src = "images/lostHeart.png";
         if (this.missed === 5) {
             console.log('Game over');
+            overlay.style.display = 'block';
+            overlay.removeAttribute('class');
+            overlay.className = 'lose';
+            overlayMessage.textContent = 'Sorry, better luck next time!';
          }
     
     }
@@ -73,8 +79,12 @@ class Game {
             return false;
         }
       }
-    // gameOver() {
+    /**
+    * 6. Displays game over message
+    * @param {boolean} gameWon - Whether or not the user won the game
+    */
+    gameOver() {
 
         
-    // }
+    }
 }
