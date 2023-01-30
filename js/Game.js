@@ -36,10 +36,14 @@ class Game {
         //console.log(typeof randomPhrase);
         ;
         }
-    // 3. handleInteraction() {
-
-    // }
-
+    // 3. 
+    handleInteraction(letter) {
+        phrase.checkLetter(letter);
+        phrase.showMatchedLetter(letter);
+        this.checkForWin();
+        this.removeLife();
+        this.gameOver();
+     }
     /**
     * 4. Increases the value of the missed property
     * Removes a life from the scoreboard
@@ -52,7 +56,9 @@ class Game {
         if (phrase.checkLetter() === false) {
             this.missed++;
             console.log(this.missed);
-        } 
+        } else {
+            this.missed;
+        }
 
         hearts[this.missed - 1].firstChild.src = "images/lostHeart.png";
         if (this.missed === 5) {

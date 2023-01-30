@@ -32,6 +32,8 @@ class Phrase {
         const letters = this.phrase.split('');
         for (let i = 0; i < letters.length; i++) {
             if ( letter === letters[i] ) {
+                console.log(letters[i]);
+                console.log(letter);
                 console.log(true);
                 return true;
             } else {

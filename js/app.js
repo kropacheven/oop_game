@@ -42,7 +42,9 @@ startBtn.addEventListener('click', () => {
 keyBoard.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON') {
         console.log(event.target);
+        game.handleInteraction(event.target.textContent);
     }
+    
 });
 
 
