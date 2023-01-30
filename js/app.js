@@ -29,6 +29,7 @@ const keyBoard = document.getElementById('qwerty');
 // a. Event listener for "Start Game" button:
 startBtn.addEventListener('click', () => {
     game.startGame();
+    phrase.phrase = game.getRandomPhrase();
     game.missed = 0; // for resetting a game - when start button is clicked(win or lose)
     let hearts = document.querySelectorAll('.tries'); // for resetting a game - when start button is clicked(win or lose)
     for (let i = 0; i < hearts.length; i++) {
