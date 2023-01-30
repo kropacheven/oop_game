@@ -24,6 +24,11 @@ const startBtn = document.getElementById('btn__reset');
 
 startBtn.addEventListener('click', () => {
     game.startGame();
+    game.missed = 0; // for resetting a game - when start button is clicked(win or lose)
+    let hearts = document.querySelectorAll('.tries'); // for resetting a game - when start button is clicked(win or lose)
+    for (let i = 0; i < hearts.length; i++) {
+        hearts[i].firstChild.src = "images/liveHeart.png";
+    }
 });
 
 
