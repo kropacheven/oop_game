@@ -29,7 +29,8 @@ class Phrase {
     * @param (string) letter - Letter to check
     */
     checkLetter(letter) {
-        const letters = this.phrase.split('');
+        const letters = game.activePhrase.split('');
+        console.log(letters);
         for (let i = 0; i < letters.length; i++) {
             if ( letter === letters[i] ) {
                 console.log(letters[i]);

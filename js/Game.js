@@ -38,8 +38,8 @@ class Game {
         }
     // 3. 
     handleInteraction(letter) {
-        phrase.checkLetter(letter);
         phrase.showMatchedLetter(letter);
+        phrase.checkLetter(letter);
         this.checkForWin();
         this.removeLife();
         this.gameOver();

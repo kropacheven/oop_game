@@ -53,7 +53,9 @@ keyBoard.addEventListener('click', (event) => {
 // ------------------- Extra Credit ------------------- //
 
 // c. Adding computer(laptop) keybord (keyup event) listener:
-document.addEventListener('keyup', (event) => {
-        console.log(event.key);
-        game.handleInteraction(event.key);   
-});
+//document.addEventListener('keyup', (event) => {
+    //if (event.key.code === 'KeyZ') {
+//        console.log(event.key);
+//        game.handleInteraction(event.key);  
+    //} 
+//});
