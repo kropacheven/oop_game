@@ -1,83 +1,65 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Game.js */
-
 class Game {
     constructor() {
         this.missed = 0;
         this.phrases = [
-        'gold fields',
-        'blue sky',
-        'green grass',
-        'colorful flowers',
-        'red sunset'
-        ];           // an array of Phrase objects to use with the Game - empty for now
-        this.activePhrase = null; //this is the Phrase object that's currently in play
+            'Gold fields',
+            'Blue sky',
+            'Green grass',
+            'Colorful flowers',
+            'Red sunset'
+        ];
+        this.activePhrase = null;
     }
     /**
-    * 1. Begins game by selecting a random phrase and displaying it to user
-    */
-     startGame() {
-        const overlay = document.getElementById('overlay');
-        overlay.style.display = 'none';
-        this.activePhrase = this.getRandomPhrase();
-        console.log(this.activePhrase);
-        phrase.addPhraseToDisplay(this.activePhrase); // ?????
-     }
-    /**
-     * 2. Selects random phrase from phrases property
+     * 1. Selects random phrase from phrases property
      * @returns {Object} Phrase object (string - ?) chosen to be used
      */
-    getRandomPhrase( ) {
-        const randomIndex = Math.floor(Math.random() * 5); // creates random numbers from 0 to 5
-        //console.log(randomIndex);
-        return this.phrases[randomIndex]; // chooses random phrase from this.phrases array;
-        //console.log(typeof randomPhrase);
-        ;
-        }
-    // 3. 
-    handleInteraction(letter) {
-        phrase.showMatchedLetter(letter);
-        phrase.checkLetter(letter);
-        this.checkForWin();
-         this.removeLife();
-         this.gameOver();
- 
-    //}
-
+     getRandomPhrase() {
+         const randomIndex = Math.floor(Math.random() * 5); // creates random numbers from 0 to 5
+         //console.log(randomIndex);
+         return this.phrases[randomIndex]; // chooses random phrase from this.phrases array;   
      }
-    /**
-    * 4. Increases the value of the missed property
-    * Removes a life from the scoreboard
-    * Checks if player has remaining lives and ends game if player is out
-    */
-    removeLife() {
-        const overlay = document.getElementById('overlay');
-        const overlayMessage = document.getElementById('game-over-message');
-        let hearts = document.querySelectorAll('.tries');
-        if (phrase.checkLetter() === false) {
-            this.missed++;
-            console.log(this.missed);
-        } else {
-            this.missed;
-        }
 
-        hearts[this.missed - 1].firstChild.src = "images/lostHeart.png";
-        if (this.missed === 5) {
-            console.log('Game over');
-            overlay.style.display = 'block';
-            overlay.removeAttribute('class');
-            overlay.className = 'lose';
-            overlayMessage.textContent = 'Sorry, better luck next time!';
-         }
-    
+  
+    /**
+    * 2. Begins game by selecting a random phrase and displaying it to user
+    */
+    startGame() {
+        // a. Changing start overlay on game overlay:
+        const overlay = document.getElementById('overlay');
+        overlay.style.display = 'none';
+
+        // b. Getting new random phrase and initializing phrase class with it:
+        //game.activePhrase = game.getRandomPhrase();
+        //const phrase = new Phrase(game.activePhrase);
+
+        // c. Displaying random phrase on display:
+        phrase.addPhraseToDisplay();
+
+        // d. Reseting a new game after playing is done:
+        this.missed = 0; // for resetting a game - when start button is clicked(win or lose)
+        let hearts = document.querySelectorAll('.tries'); // for resetting a game - when start button is clicked(win or lose)
+        for (let i = 0; i < hearts.length; i++) {
+            hearts[i].firstChild.src = "images/liveHeart.png";
+        }
+        const buttons = document.getElementsByTagName('button'); // clearing buttons classes after game reset
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].className = 'key';
+        }
+        //const li = document.getElementsByClassName('letter'); // clearing buttons classes after game reset
+        //for (let i = 0; i < li.length; i++) {
+        //    li[i].remove();
+        // }
     }
     /**
-    * 5. Checks for winning move
+    * 3. Checks for winning move
     * @return {boolean} True if game has been won, false if game wasn't
     won
     */
-      checkForWin() {
+    checkForWin() {
         const letter = document.getElementsByClassName('letter');
         const show = document.getElementsByClassName('show');
         if (letter.length === show.length) {
@@ -88,7 +70,7 @@ class Game {
         }
       }
     /**
-    * 6. Displays game over message
+    * 4. Displays game over message
     * @param {boolean} gameWon - Whether or not the user won the game
     */
     gameOver() {
@@ -102,4 +84,36 @@ class Game {
         }
         
     }
-}
+    /**
+    * 5. Increases the value of the missed property
+    * Removes a life from the scoreboard
+    */
+    removeLife() {
+        const overlay = document.getElementById('overlay');
+        const overlayMessage = document.getElementById('game-over-message');
+        let hearts = document.querySelectorAll('.tries');
+        hearts[this.missed - 1].firstChild.src = "images/lostHeart.png";
+       // Checks if player has remaining lives and ends game if player is out
+       if (this.missed === 5) {
+        console.log('Game over');
+        overlay.style.display = 'block';
+        overlay.removeAttribute('class');
+        overlay.className = 'lose';
+        overlayMessage.textContent = 'Sorry, better luck next time!';
+     }
+    }
+    // 6. Handle interaction: 
+    handleInteraction(button) {
+    let letter = button.textContent;
+       if ( phrase.checkLetter(letter) === true ) {
+        phrase.showMatchedLetter(letter);
+        button.className = 'chosen';
+       } else {
+        this.missed++;
+        button.className = 'wrong';
+        this.removeLife();
+       }
+     this.checkForWin();
+     this.gameOver();
+    }
+};
