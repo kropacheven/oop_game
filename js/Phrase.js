@@ -21,7 +21,7 @@ class Phrase {
                 html += `<li class='hide letter'>${letters[i]}</li>`;
             }
         }
-        console.log(html);
+        //console.log(html);
         document.querySelector('#letters').innerHTML = html;
      }
     /**

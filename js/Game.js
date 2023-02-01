@@ -93,7 +93,7 @@ class Game {
         hearts[this.missed - 1].firstChild.src = "images/lostHeart.png";
        // Checks if player has remaining lives and ends game if player is out
        if (this.missed === 5) {
-        console.log('Game over');
+        //console.log('Game over');
         overlay.style.display = 'block';
         overlay.removeAttribute('class');
         overlay.className = 'lose';

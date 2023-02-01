@@ -14,7 +14,7 @@ startBtn.addEventListener('click', () => {
 const keyBoard = document.getElementById('qwerty');
 keyBoard.addEventListener('click', (event) => {
     if (event.target.tagName === 'BUTTON') {
-        console.log(event.target);
+        //console.log(event.target);
         game.handleInteraction(event.target);
     }
     
