@@ -100,7 +100,11 @@ class Game {
         overlayMessage.textContent = 'Sorry, better luck next time!';
      }
     }
-    // 6. Handle interaction: 
+    /**
+    * 5. Handle interaction - main logic
+    * @param {element} button(from qwerty onscreen console) - Whether or not the user won the game
+    * If the letter on the button matches with onscreen letter - it's displayed onscreen, if not - the 1 heart point is removed from user
+    */
     handleInteraction(button) {
     let letter = button.textContent;
        if ( this.activePhrase.checkLetter(letter) === true ) {
