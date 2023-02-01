@@ -19,3 +19,12 @@ keyBoard.addEventListener('click', (event) => {
     }
     
 });
+
+
+// ------------------- Extra Credit ------------------- //
+
+// c. Adding computer(laptop) keybord (keyup event) listener:
+//document.addEventListener('keyup', (event) => {
+//    console.log(event.key);
+//    game.handleInteraction(event.key);   
+//});
