@@ -5,11 +5,11 @@ class Game {
     constructor() {
         this.missed = 0;
         this.phrases = [
-            'Gold fields',
-            'Blue sky',
-            'Green grass',
-            'Colorful flowers',
-            'Red sunset'
+            new Phrase('Gold fields'),
+            new Phrase('Blue sky'),
+            new Phrase('Green grass'),
+            new Phrase('Colorful flowers'),
+            new Phrase('Red sunset')
         ];
         this.activePhrase = null;
     }
@@ -23,7 +23,6 @@ class Game {
          return this.phrases[randomIndex]; // chooses random phrase from this.phrases array;   
      }
 
-  
     /**
     * 2. Begins game by selecting a random phrase and displaying it to user
     */
@@ -33,11 +32,10 @@ class Game {
         overlay.style.display = 'none';
 
         // b. Getting new random phrase and initializing phrase class with it:
-        //game.activePhrase = game.getRandomPhrase();
-        //const phrase = new Phrase(game.activePhrase);
+        this.activePhrase = this.getRandomPhrase();
 
         // c. Displaying random phrase on display:
-        phrase.addPhraseToDisplay();
+        this.activePhrase.addPhraseToDisplay();
 
         // d. Reseting a new game after playing is done:
         this.missed = 0; // for resetting a game - when start button is clicked(win or lose)
@@ -105,8 +103,8 @@ class Game {
     // 6. Handle interaction: 
     handleInteraction(button) {
     let letter = button.textContent;
-       if ( phrase.checkLetter(letter) === true ) {
-        phrase.showMatchedLetter(letter);
+       if ( this.activePhrase.checkLetter(letter) === true ) {
+        this.activePhrase.showMatchedLetter(letter);
         button.className = 'chosen';
        } else {
         this.missed++;

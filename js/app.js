@@ -4,21 +4,6 @@
 
 const game = new Game();
 
-//game.phrases.forEach( (phrase, index) => {
-//    console.log(`Phrase ${index} - phrase: ${phrase}`);
-//}); 
-
-game.activePhrase = game.getRandomPhrase();
-const phrase = new Phrase(game.activePhrase);
-//console.log(phrase.phrase);
-//console.log(game);
-
-
-//game.phrases.forEach( (phrase, index) => {
-//    console.log(`Phrase ${index} - phrase: ${phrase.phrase}`);
-//}); 
-
-
 // a. Event listener for "Start Game" button:
 const startBtn = document.getElementById('btn__reset');
 startBtn.addEventListener('click', () => {
