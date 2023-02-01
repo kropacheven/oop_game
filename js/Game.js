@@ -12,7 +12,7 @@ class Game {
         'colorful flowers',
         'red sunset'
         ];           // an array of Phrase objects to use with the Game - empty for now
-        this.activePhrase = 'null'; //this is the Phrase object that's currently in play
+        this.activePhrase = null; //this is the Phrase object that's currently in play
     }
     /**
     * 1. Begins game by selecting a random phrase and displaying it to user
@@ -20,10 +20,9 @@ class Game {
      startGame() {
         const overlay = document.getElementById('overlay');
         overlay.style.display = 'none';
-        this.getRandomPhrase();
-        this.activePhrase = phrase.phrase;
-        //console.log(this.activePhrase);
-        phrase.addPhraseToDisplay(); // ?????
+        this.activePhrase = this.getRandomPhrase();
+        console.log(this.activePhrase);
+        phrase.addPhraseToDisplay(this.activePhrase); // ?????
      }
     /**
      * 2. Selects random phrase from phrases property
@@ -41,8 +40,11 @@ class Game {
         phrase.showMatchedLetter(letter);
         phrase.checkLetter(letter);
         this.checkForWin();
-        this.removeLife();
-        this.gameOver();
+         this.removeLife();
+         this.gameOver();
+ 
+    //}
+
      }
     /**
     * 4. Increases the value of the missed property

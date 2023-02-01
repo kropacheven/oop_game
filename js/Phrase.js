@@ -5,6 +5,7 @@
 class Phrase {
     constructor (phrase) {
         this.phrase = phrase.toLowerCase();
+        //console.log();
     }
     /**
     * 1. Display phrase on game board
@@ -28,19 +29,29 @@ class Phrase {
     * 2. Checks if passed letter is in phrase
     * @param (string) letter - Letter to check
     */
+   
     checkLetter(letter) {
-        const letters = game.activePhrase.split('');
-        console.log(letters);
-        for (let i = 0; i < letters.length; i++) {
-            if ( letter === letters[i] ) {
-                console.log(letters[i]);
-                console.log(letter);
-                console.log(true);
-                return true;
-            } else {
-                console.log(false);
-                return false;
-            }
+        //const letters = game.activePhrase.split('');
+        //console.log(letters);
+        // for (let i = 0; i < letters.length; i++) {
+        //     if ( letter === letters[i] ) {
+        //         console.log(letters[i]);
+        //         console.log(letter);
+        //         console.log(true);
+        //         return true;
+        //     } else {
+        //         console.log(false);
+        //         return false;
+        //     }
+        // }
+        //console.log(letter);
+        console.log(this.phrase);
+        if ( game.activePhrase.includes(letter) ) {
+            console.log(game.activePhrase);
+            //console.log(game.activePhrase);
+            return true;
+        } else {
+            return false;
         }
     }
     /**
