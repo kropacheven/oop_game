@@ -1,11 +1,12 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Game.js */
+
 class Game {
     constructor() {
         this.missed = 0;
         this.phrases = [
-            new Phrase('Gold fields'),
+            new Phrase('Golden fields'),
             new Phrase('Blue sky'),
             new Phrase('Green grass'),
             new Phrase('Colorful flowers'),
@@ -47,10 +48,6 @@ class Game {
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].className = 'key';
         }
-        //const li = document.getElementsByClassName('letter'); // clearing buttons classes after game reset
-        //for (let i = 0; i < li.length; i++) {
-        //    li[i].remove();
-        // }
     }
     /**
     * 3. Checks for winning move
@@ -101,7 +98,7 @@ class Game {
      }
     }
     /**
-    * 5. Handle interaction - main logic
+    * 6. Handle interaction - main logic
     * @param {element} button(from qwerty onscreen console) - Whether or not the user won the game
     * If the letter on the button matches with onscreen letter - it's displayed onscreen, if not - the 1 heart point is removed from user
     */
