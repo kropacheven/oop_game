@@ -215,10 +215,6 @@ button {
   background-color: lightcyan;
 }
 
-#overlay {
-  background-color: lightblue;
-}
-
 #overlay button {
   border: 2px solid grey ;
 }
