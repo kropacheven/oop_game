@@ -24,7 +24,13 @@ keyBoard.addEventListener('click', (event) => {
 // ------------------- Extra Credit ------------------- //
 
 // c. Adding computer(laptop) keybord (keyup event) listener:
-//document.addEventListener('keyup', (event) => {
-//    console.log(event.key);
-//    game.handleInteraction(event.key);   
-//});
+const buttons = document.getElementsByClassName('key');
+console.log(buttons);
+document.addEventListener('keyup', (event) => {
+    for (let i=0; i < buttons.length; i++ ) {
+    if ( buttons[i].innerHTML === event.key) {
+    console.log(event.key);
+    game.handleInteraction(buttons[i]);   
+    }
+}
+});
