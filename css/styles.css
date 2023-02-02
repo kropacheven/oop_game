@@ -202,3 +202,23 @@ button {
 .lose a {
   color: var(--color-lose);
 }
+
+
+/* Extra credit =  personal style changes*/
+.key {
+ border: 1px solid grey; 
+ background-color: #52bab3;
+ color: white;
+}
+
+.main-container {
+  background-color: lightcyan;
+}
+
+#overlay {
+  background-color: lightblue;
+}
+
+#overlay button {
+  border: 2px solid grey ;
+}
