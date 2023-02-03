@@ -46,7 +46,8 @@ class Game {
         }
         const buttons = document.getElementsByTagName('button'); // clearing buttons classes after game reset
         for (let i = 0; i < buttons.length; i++) {
-            buttons[i].className = 'key';
+            buttons[i].className = 'key'
+            buttons[i].disabled = false;;
         }
     }
     /**
@@ -107,9 +108,11 @@ class Game {
        if ( this.activePhrase.checkLetter(letter) === true ) {
         this.activePhrase.showMatchedLetter(letter);
         button.className = 'chosen';
+        button.disabled = true;
        } else {
         this.missed++;
         button.className = 'wrong';
+        button.disabled = true;
         this.removeLife();
        }
      this.checkForWin();
