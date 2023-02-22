@@ -10,3 +10,5 @@ The game is coded by applying the following techniques: vanilla Java Script, DOM
 
 User's laptop or computer keyboard is also linked to the interaction (as well as onscreen keyboard).
 Extra style changes are made in a styles.css file to style the look of the game page and key buttons.
+
+You can take a look at the project: https://kropacheven.github.io/oop_game/
